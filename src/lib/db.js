@@ -5,7 +5,7 @@ export async function fetchProfile(userId) {
     .from('profiles')
     .select('*')
     .eq('id', userId)
-    .single();
+    .maybeSingle();
   return data ?? null;
 }
 
@@ -57,7 +57,7 @@ export async function fetchChallenge(userId) {
     .from('weekly_challenges')
     .select('*')
     .eq('user_id', userId)
-    .single();
+    .maybeSingle();
   return data ?? null;
 }
 
